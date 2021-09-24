@@ -37,6 +37,17 @@ class AppTest {
 
     @Test 
 
+    public void testMidTwo(){
+        String[] students ={"dogukan","orkun", "yigit", "taylan"};
+        int[] midtermGrades={0,100,100,10};
+        int[] finalGrades={40,100,70,20};      
+        ArrayList<String> array = new ArrayList<>(Arrays.asList("orkun", "yigit"));
+        assertEquals(App.classPassers(students,midtermGrades, finalGrades, 40, 60, 50),array);
+    }
+
+
+    @Test 
+
     public void testNone(){
         String[] students ={"dogukan","orkun", "yigit", "taylan"};
         int[] midtermGrades={0,10,20,10};
