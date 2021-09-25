@@ -53,6 +53,7 @@ public class App {
 
     int port = Integer.parseInt(System.getenv("PORT"));
     port(port);
+    logger.error("Current port number: "+ port);
 
     System.out.println(new App().getGreeting());
 
