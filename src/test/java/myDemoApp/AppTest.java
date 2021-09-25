@@ -18,9 +18,9 @@ class AppTest {
     @Test 
 
     public void testFirstTwo(){
-        String[] students ={"dogukan","orkun", "yigit", "taylan"};
-        int[] midtermGrades={100,90,20,10};
-        int[] finalGrades={100,90,20,10};      
+        ArrayList<String> students =new ArrayList<>(Arrays.asList("dogukan", "orkun", "yigit","taylan"));
+        ArrayList<Integer> midtermGrades = new ArrayList<>(Arrays.asList(100,90,20,10));
+        ArrayList<Integer> finalGrades = new ArrayList<>(Arrays.asList(100,90,20,10));
         ArrayList<String> array = new ArrayList<>(Arrays.asList("dogukan", "orkun"));
         assertEquals(App.classPassers(students,midtermGrades, finalGrades, 40, 60, 50),array);
     }
@@ -28,9 +28,9 @@ class AppTest {
     @Test 
 
     public void testLastTwo(){
-        String[] students ={"dogukan","orkun", "yigit", "taylan"};
-        int[] midtermGrades={0,10,100,100};
-        int[] finalGrades={40,10,50,50};      
+        ArrayList<String> students =new ArrayList<>(Arrays.asList("dogukan", "orkun", "yigit","taylan"));
+        ArrayList<Integer> midtermGrades = new ArrayList<>(Arrays.asList(0,0,100,100));
+        ArrayList<Integer> finalGrades = new ArrayList<>(Arrays.asList(50,40,90,80));
         ArrayList<String> array = new ArrayList<>(Arrays.asList("yigit", "taylan"));
         assertEquals(App.classPassers(students,midtermGrades, finalGrades, 40, 60, 50),array);
     }
@@ -38,9 +38,9 @@ class AppTest {
     @Test 
 
     public void testMidTwo(){
-        String[] students ={"dogukan","orkun", "yigit", "taylan"};
-        int[] midtermGrades={0,100,100,10};
-        int[] finalGrades={40,100,70,20};      
+        ArrayList<String> students =new ArrayList<>(Arrays.asList("dogukan", "orkun", "yigit","taylan"));
+        ArrayList<Integer> midtermGrades = new ArrayList<>(Arrays.asList(0,100,100,0));
+        ArrayList<Integer> finalGrades = new ArrayList<>(Arrays.asList(50,70,90,40));
         ArrayList<String> array = new ArrayList<>(Arrays.asList("orkun", "yigit"));
         assertEquals(App.classPassers(students,midtermGrades, finalGrades, 40, 60, 50),array);
     }
@@ -49,9 +49,9 @@ class AppTest {
     @Test 
 
     public void testNone(){
-        String[] students ={"dogukan","orkun", "yigit", "taylan"};
-        int[] midtermGrades={0,10,20,10};
-        int[] finalGrades={20,30,20,10};    
+        ArrayList<String> students =new ArrayList<>(Arrays.asList("dogukan", "orkun", "yigit","taylan"));
+        ArrayList<Integer> midtermGrades = new ArrayList<>(Arrays.asList(0,0,0,0));
+        ArrayList<Integer> finalGrades = new ArrayList<>(Arrays.asList(20,40,10,20));  
         ArrayList<String> array = new ArrayList<>(Arrays.asList("no one passed"));  
         assertEquals(App.classPassers(students,midtermGrades, finalGrades, 40, 60, 50),array);
     }
@@ -59,9 +59,9 @@ class AppTest {
     @Test 
 
     public void testAll(){
-        String[] students ={"dogukan","orkun", "yigit", "taylan"};
-        int[] midtermGrades={100,100,90,80};
-        int[] finalGrades={100,90,80,80};      
+        ArrayList<String> students =new ArrayList<>(Arrays.asList("dogukan", "orkun", "yigit","taylan"));
+        ArrayList<Integer> midtermGrades = new ArrayList<>(Arrays.asList(100,90,100,100));
+        ArrayList<Integer> finalGrades = new ArrayList<>(Arrays.asList(70,80,90,80));
         ArrayList<String> array = new ArrayList<>(Arrays.asList("dogukan", "orkun","yigit","taylan"));
         assertEquals(App.classPassers(students,midtermGrades, finalGrades, 40, 60, 50),array);
     }
@@ -69,27 +69,27 @@ class AppTest {
     @Test 
 
     public void testStudentsNull(){
-        String[] students =null;
-        int[] midtermGrades={100,100,90,80};
-        int[] finalGrades={100,90,80,80};         
+        ArrayList<String> students =null;
+        ArrayList<Integer> midtermGrades = new ArrayList<>(Arrays.asList(100,90,100,100));
+        ArrayList<Integer> finalGrades = new ArrayList<>(Arrays.asList(70,80,90,80));   
         assertNull(App.classPassers(students,midtermGrades, finalGrades, 40, 60, 50));
     } 
 
     @Test 
 
     public void testMidtermGradesNull(){
-        String[] students ={"dogukan","orkun", "yigit", "taylan"};
-        int[] midtermGrades=null;
-        int[] finalGrades={100,90,80,80};  
+        ArrayList<String> students =new ArrayList<>(Arrays.asList("dogukan", "orkun", "yigit","taylan"));
+        ArrayList<Integer> midtermGrades =null;
+        ArrayList<Integer> finalGrades = new ArrayList<>(Arrays.asList(70,80,90,80));
         assertNull(App.classPassers(students,midtermGrades, finalGrades, 40, 60, 50));
     } 
 
     @Test 
 
     public void testFinalGradesNull(){
-        String[] students ={"dogukan","orkun", "yigit", "taylan"};
-        int[] midtermGrades={100,100,90,80};
-        int[] finalGrades=null;      
+        ArrayList<String> students =new ArrayList<>(Arrays.asList("dogukan", "orkun", "yigit","taylan"));
+        ArrayList<Integer> midtermGrades = new ArrayList<>(Arrays.asList(100,90,100,100));
+        ArrayList<Integer> finalGrades = null;
         assertNull(App.classPassers(students,midtermGrades, finalGrades, 40, 60, 50));
     } 
 }
