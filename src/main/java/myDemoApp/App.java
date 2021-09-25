@@ -61,7 +61,7 @@ public class App {
 
     get("/compute", (rq, rs) -> {
       Map<String, String> map = new HashMap<String, String>();
-      map.put("result", "not computed yet!");
+      map.put("Result","In the first form enter students name separeted by a newline character\nIn the second form enter students midterm grades separeted by a newline character\nIn the third form enter students final grades separeted by a newline character\nIn the fourth form enter midterm exam percentage\nIn the fifth form enter final exam percentage\nIn the sixth form enter treshold grade\n");
       return new ModelAndView(map, "compute.mustache");
     }, new MustacheTemplateEngine());
 
